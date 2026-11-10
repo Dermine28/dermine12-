@@ -80,7 +80,7 @@ h1 {
 
     h3{
         font-size: 1.6em;
-        padding: 0.5px;
+        padding: 0.5em;
     }
     
     article div{
@@ -90,13 +90,13 @@ h1 {
         background-color: blue;
     }
 
-    section:nth-t-of-type(1) article{
+    section:nth-of-type(1) article{
         /*nth-child selects an element based on its position in its parent,
         regardless od whar type of element are there/
         nth-of-type will only selct emements at that position if it matches the element type */
 
         /* display flex,by default, makes things sit next to each other....*/
-        di
+        display: flex;
     }
 
     section:nth-of-type(2) article{
@@ -106,7 +106,7 @@ h1 {
          
     }
 
-    section:nth-last-of-type(3) article{
+    section:nth-of-type(3) article{
         display: flex;
 
         /* there are multiple ways to space the elements in your 
@@ -118,16 +118,79 @@ h1 {
         justify-content: space-evenly;
     }
 
-    section:nth-last-of-type(4)article{
+    section:nth-of-type(4) article{
         display: flex;
     }
     /* you can tell each object inside the flex to grow to take up the available space */
-    section:nth-last-of-type(4)article div{
+    section:nth-of-type(4) article div{
         flex-grow: 1;
     }
 
     /* you can tell individula objects to take uo more (or less) space
     than other objects....*/
-    section:nth-last-of-type(4) article div:nth-last-of-type(2){
+    section:nth-last-of-type(4) article div:nth-of-type(2){
         flex-grow: 2;
     }
+
+    /*********************************************
+            FLEX EXAMPLE FOR NAV
+    **********************************************/
+
+    nav ul{
+        /* make the list items inside the ul sit to each other */
+        display: flex;
+
+        /* you  can tell the objects to wrap to the next line (row 
+        or column) if they on longer fit inside the flexbox */
+        flex-wrap: wrap;
+        /* justify-content:space-evenly;
+        ....this would be good if you wanted a text-based nav */
+    }
+
+    /*.... we can also use  flex to make teh nav look more like 
+    buttons*/
+nav ul li{
+    flex-grow: 1;
+    background-color: aqua;
+
+    /* you can put a flexbox inside of a flexbox */
+    display: flex;
+}
+    nav ul li a{
+        flex-grow: 1;
+        text-align: center;
+        padding:1em;
+    }
+
+    nav ul li a:hover{
+        background-color: brown;
+    }
+
+
+
+/**************************************************
+
+***************************************************/
+
+/* at a minimum of 640px, and above , apply these styles which contains 
+the main and the aside, so the main and aside will sit next to each other */
+.flexer{
+    display: flex;
+    gap: 1em;
+}
+
+/* using flex-grow, weight the main and aside */
+main{
+    flex-grow: 4;
+    /* make the content in the main distributed vertically to make up as much space as much space as the 
+    sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* default order in 1, so by setting this to 2, we move it after the aside */
+}
+
+aside{
+    flex-grow: 1;
+}
