@@ -49,3 +49,85 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+
+
+
+/*********************************************************************
+                       MAIN STYLES
+**********************************************************************/
+
+/* always give your site maximum width*/
+.contant {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: blueviolet;
+}
+
+h1 {
+    font-size: 2.2em;
+    /* an em is always relative to the current font size, with by default is set to 16px
+    (2.2 * 16px =35.2px) */
+    /* you can set padding and margin based on an element's font size with em */
+    padding: 0.5em; /*0.5 *3 35.2 = 17.6px */
+
+    /* an rem is relative to the root font size (either the default of 16px, 
+    or whatever font size you set on the html tag) */
+    margin-bottom: 1rem; /* 1 * 16px = 16px */
+
+}
+
+
+    h3{
+        font-size: 1.6em;
+        padding: 0.5px;
+    }
+    
+    article div{
+        font-size: 36px;
+        padding: 10px;
+        border: 2px solid blanchedalmond; 
+        background-color: blue;
+    }
+
+    section:nth-t-of-type(1) article{
+        /*nth-child selects an element based on its position in its parent,
+        regardless od whar type of element are there/
+        nth-of-type will only selct emements at that position if it matches the element type */
+
+        /* display flex,by default, makes things sit next to each other....*/
+        di
+    }
+
+    section:nth-of-type(2) article{
+        display: flex;
+        /* the direction of the flex is relative to the language
+         the site is written in */
+         
+    }
+
+    section:nth-last-of-type(3) article{
+        display: flex;
+
+        /* there are multiple ways to space the elements in your 
+        flexbox(or to justify the content )
+        - flex-start,flex-end, and center which move the content around 
+        -space-between spreads the elemment out with an equal amount of space between them 
+        -space-around spreads the element out with an equal amout of space on either side of each elements 
+        within the available space */
+        justify-content: space-evenly;
+    }
+
+    section:nth-last-of-type(4)article{
+        display: flex;
+    }
+    /* you can tell each object inside the flex to grow to take up the available space */
+    section:nth-last-of-type(4)article div{
+        flex-grow: 1;
+    }
+
+    /* you can tell individula objects to take uo more (or less) space
+    than other objects....*/
+    section:nth-last-of-type(4) article div:nth-last-of-type(2){
+        flex-grow: 2;
+    }
